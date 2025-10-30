@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Concept - Fuar Stand Tasarım</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Dark Concept Logo">
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#anasayfa" class="nav-link active">Anasayfa</a></li>
+                    <li><a href="#videolar" class="nav-link">Videolar</a></li>
+                    <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                    <li><a href="#referanslar" class="nav-link">Referanslar</a></li>
+                    <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="anasayfa" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Dark Concept</h1>
+            <p class="hero-subtitle">Fuar Stand Tasarımında Yenilikçi Çözümler</p>
+            <p class="hero-description">Markanızı fuarlarda öne çıkaran özel tasarım standlar</p>
+            <a href="#iletisim" class="btn btn-primary">Bize Ulaşın</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hizmetlerimiz</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Stand Tasarımı</h3>
+                    <p>Markanızın kimliğini yansıtan özgün ve etkileyici stand tasarımları</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Üretim & Montaj</h3>
+                    <p>Profesyonel ekibimizle hızlı ve kaliteli üretim-montaj hizmeti</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Danışmanlık</h3>
+                    <p>Fuar stratejiniz için profesyonel danışmanlık ve planlama desteği</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Lojistik</h3>
+                    <p>Malzemelerin nakliyesi ve depolama konusunda eksiksiz hizmet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videolar" class="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projelerimiz</h2>
+                <div class="divider"></div>
+                <p>Gerçekleştirdiğimiz özel tasarım fuar standlarından örnekler</p>
+            </div>
+            
+            <div class="video-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="teknoloji">Teknoloji</button>
+                <button class="filter-btn" data-filter="otomotiv">Otomotiv</button>
+                <button class="filter-btn" data-filter="gida">Gıda</button>
+                <button class="filter-btn" data-filter="mobilya">Mobilya</button>
+            </div>
+
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card" data-category="teknoloji">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Teknoloji Fuarı 2024</h3>
+                        <p>Modern ve minimalist tasarım</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card" data-category="otomotiv">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Otomotiv Showroom</h3>
+                        <p>Lüks ve prestijli stand tasarımı</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card" data-category="gida">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Gıda Fuarı Stand</h3>
+                        <p>Doğal ve sıcak atmosfer</p>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-card" data-category="mobilya">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Mobilya Sergisi</h3>
+                        <p>Şık ve fonksiyonel tasarım</p>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-card" data-category="teknoloji">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>İnovasyon Merkezi</h3>
+                        <p>İnteraktif stand çözümü</p>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card" data-category="otomotiv">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Araç Lansmanı</h3>
+                        <p>Etkileyici sunum alanı</p>
+                    </div>
+                </div>
+
+                <!-- Video 7 -->
+                <div class="video-card" data-category="teknoloji">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Yazılım Fuarı</h3>
+                        <p>Dijital ve çağdaş tasarım</p>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <div class="video-card" data-category="gida">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Organik Ürünler</h3>
+                        <p>Ekolojik stand konsepti</p>
+                    </div>
+                </div>
+
+                <!-- Video 9 -->
+                <div class="video-card" data-category="mobilya">
+                    <div class="video-thumbnail">
+                        <video class="video-preview" poster="">
+                            <source src="video/ALTEKA & DARK CONCEPT.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-btn" onclick="openVideoModal('video/ALTEKA & DARK CONCEPT.mp4')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Tasarım Haftası</h3>
+                        <p>Avant-garde yaklaşım</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            <div class="modal-video">
+                <p>Buraya video URL'nizi ekleyebilirsiniz (YouTube, Vimeo vb.)</p>
+                <div id="videoContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="hakkimizda" class="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <div class="section-header">
+                        <h2>Hakkımızda</h2>
+                        <div class="divider"></div>
+                    </div>
+                    <p class="about-text">
+                        Dark Concept olarak, fuar sektöründe yılların deneyimi ile markanızı öne çıkaran 
+                        özel tasarım stand çözümleri sunuyoruz. Yaratıcılık, kalite ve mükemmeliyetçilik 
+                        ilkelerimizle her projede fark yaratıyoruz.
+                    </p>
+                    <p class="about-text">
+                        Ekibimiz; mimari tasarım, endüstriyel üretim ve proje yönetimi alanlarında uzman 
+                        profesyonellerden oluşmaktadır. Sizin vizyonunuzu, sektörün en yenilikçi çözümleriyle 
+                        birleştirerek unutulmaz fuar deneyimleri yaratıyoruz.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">250+</div>
+                            <div class="stat-label">Tamamlanan Proje</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Yıllık Deneyim</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Mutlu Müşteri</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="referanslar" class="references">
+        <div class="container">
+            <div class="section-header">
+                <h2>Referanslarımız</h2>
+                <div class="divider"></div>
+                <p>Birlikte çalıştığımız değerli markalar</p>
+            </div>
+            <div class="references-grid">
+                <div class="reference-card">
+                    <div class="reference-logo">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h4>Şirket A</h4>
+                </div>
+                <div class="reference-card">
+                    <div class="reference-logo">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h4>Şirket B</h4>
+                </div>
+                <div class="reference-card">
+                    <div class="reference-logo">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h4>Şirket C</h4>
+                </div>
+                <div class="reference-card">
+                    <div class="reference-logo">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Şirket D</h4>
+                </div>
+                <div class="reference-card">
+                    <div class="reference-logo">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>Şirket E</h4>
+                </div>
+                <div class="reference-card">
+                    <div class="reference-logo">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Şirket F</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="iletisim" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>İletişim</h2>
+                <div class="divider"></div>
+                <p>Projeleriniz için bizimle iletişime geçin</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Adres</h4>
+                            <p>İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefon</h4>
+                            <p>+90 XXX XXX XX XX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-posta</h4>
+                            <p>info@darkconcept.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="E-posta Adresiniz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Telefon Numaranız">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Mesajınız" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Dark Concept">
+                </div>
+                <p>&copy; 2024 Dark Concept. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
