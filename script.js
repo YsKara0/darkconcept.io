@@ -142,6 +142,33 @@ window.addEventListener('click', function(event) {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeVideoModal();
+        closeImageModal();
+    }
+});
+
+// Photo Gallery functionality
+const galleryItems = document.querySelectorAll('.gallery-item');
+const imageModal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+
+galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+        const img = this.querySelector('img');
+        modalImage.src = img.src;
+        imageModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+function closeImageModal() {
+    imageModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close image modal when clicking outside
+window.addEventListener('click', function(event) {
+    if (event.target === imageModal) {
+        closeImageModal();
     }
 });
 
