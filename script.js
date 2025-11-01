@@ -98,16 +98,34 @@ filterBtns.forEach(btn => {
 });
 
 // Video Modal functionality
-function openVideoModal(videoSrc) {
+function openVideoModal(driveLink) {
     const modal = document.getElementById('videoModal');
     const videoContainer = document.getElementById('videoContainer');
     
-    // Video player oluştur
+    // Google Drive link'ini embed formatına çevir
+    // Örnek: https://drive.google.com/file/d/FILE_ID/view
+    // Embed: https://drive.google.com/file/d/FILE_ID/preview
+    let embedUrl = driveLink;
+    
+    if (driveLink.includes('drive.google.com')) {
+        // Google Drive linkini embed formatına çevir
+        const fileId = driveLink.match(/\/d\/(.+?)\//)?.[1] || driveLink.match(/id=(.+?)(&|$)/)?.[1];
+        if (fileId) {
+            embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+        }
+    }
+    
+    // Google Drive embed player oluştur
     videoContainer.innerHTML = `
-        <video controls autoplay style="width: 100%; border-radius: 10px; max-height: 80vh;">
-            <source src="${videoSrc}" type="video/mp4">
-            Tarayıcınız video etiketini desteklemiyor.
-        </video>
+        <iframe 
+            src="${embedUrl}" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen
+            style="border-radius: 10px; max-height: 80vh;">
+        </iframe>
     `;
     
     modal.style.display = 'block';
@@ -118,13 +136,7 @@ function closeVideoModal() {
     const modal = document.getElementById('videoModal');
     const videoContainer = document.getElementById('videoContainer');
     
-    // Videoyu durdur
-    const video = videoContainer.querySelector('video');
-    if (video) {
-        video.pause();
-        video.currentTime = 0;
-    }
-    
+    // iframe'i kaldır (video otomatik durur)
     modal.style.display = 'none';
     videoContainer.innerHTML = '';
     document.body.style.overflow = 'auto';
