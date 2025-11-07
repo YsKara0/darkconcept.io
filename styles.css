@@ -599,6 +599,155 @@ body {
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* Decoration Section */
+.decoration {
+    padding: 100px 0;
+    background: white;
+    position: relative;
+    z-index: 10;
+}
+
+.decoration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.decoration-card {
+    background: var(--bg-light);
+    border-radius: 10px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.decoration-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.decoration-content {
+    padding: 30px 20px;
+}
+
+.decoration-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: var(--transition);
+}
+
+.decoration-card:hover .decoration-icon {
+    transform: rotate(360deg);
+}
+
+.decoration-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.decoration-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.decoration-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.decoration-features {
+    list-style: none;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.decoration-features li {
+    margin-bottom: 8px;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.decoration-features li i {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+.decoration-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-top: auto;
+}
+
+.decoration-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.decoration-card:hover .decoration-image img {
+    transform: scale(1.1);
+}
+
+.decoration-cta {
+    text-align: center;
+    padding: 40px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    color: white;
+    margin-top: 40px;
+}
+
+.decoration-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.decoration-cta p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.decoration-cta .btn-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.decoration-cta .btn-primary:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .decoration-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .decoration-cta {
+        padding: 30px 20px;
+    }
+    
+    .decoration-cta h3 {
+        font-size: 1.5rem;
+    }
+}
+
 /* About Section */
 .about {
     padding: 100px 0;
