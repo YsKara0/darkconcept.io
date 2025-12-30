@@ -75,6 +75,7 @@ filterBtns.forEach(btn => {
         
         const filter = this.getAttribute('data-filter');
         
+        // Video kartlarını filtrele
         videoCards.forEach((card, index) => {
             // Önce tüm kartları gizle
             card.style.opacity = '0';
