@@ -489,8 +489,20 @@ h6 {
 
 .videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .video-card {
@@ -509,11 +521,13 @@ h6 {
 
 .video-thumbnail {
     position: relative;
-    padding-bottom: 56.25%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
 }
 
-.video-thumbnail img {
+.video-thumbnail img,
+.video-thumbnail video {
     position: absolute;
     top: 0;
     left: 0;
