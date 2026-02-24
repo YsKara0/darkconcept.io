@@ -1,10 +1,17 @@
 // Navbar scroll effect
+let scrolling = false;
 window.addEventListener('scroll', function () {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (!scrolling) {
+        window.requestAnimationFrame(function () {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            scrolling = false;
+        });
+        scrolling = true;
     }
 });
 
@@ -26,25 +33,29 @@ navLinks.forEach(link => {
     });
 });
 
-// Active navigation link on scroll
-window.addEventListener('scroll', function () {
-    let current = '';
-    const sections = document.querySelectorAll('section');
+// Active navigation link on scroll using IntersectionObserver for better performance
+const sections = document.querySelectorAll('section');
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 100)) {
-            current = section.getAttribute('id');
+const sectionObserverOptions = {
+    threshold: 0.3
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentId}`) {
+                    link.classList.add('active');
+                }
+            });
         }
     });
+}, sectionObserverOptions);
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
+sections.forEach(section => {
+    sectionObserver.observe(section);
 });
 
 // Smooth scroll for navigation links
@@ -241,16 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Parallax effect for hero section (removed to prevent overlap issues)
-// If you want parallax, use a more controlled approach
-window.addEventListener('scroll', function () {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
-    }
-});
+// Parallax effect removed for optimal performance and to eliminate lag
 
 // Add fade-in animation CSS if not already in styles
 const style = document.createElement('style');
